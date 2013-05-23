@@ -1,0 +1,354 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8485ADFB16C8E1E600C8065E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485ADFA16C8E1E600C8065E /* UIKit.framework */; };
+		8485ADFD16C8E1E600C8065E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485ADFC16C8E1E600C8065E /* Foundation.framework */; };
+		8485ADFF16C8E1E600C8065E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485ADFE16C8E1E600C8065E /* CoreGraphics.framework */; };
+		8485AE0516C8E1E600C8065E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8485AE0316C8E1E600C8065E /* InfoPlist.strings */; };
+		8485AE0716C8E1E600C8065E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485AE0616C8E1E600C8065E /* main.m */; };
+		8485AE0B16C8E1E600C8065E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485AE0A16C8E1E600C8065E /* AppDelegate.m */; };
+		8485AE0D16C8E1E600C8065E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8485AE0C16C8E1E600C8065E /* Default.png */; };
+		8485AE0F16C8E1E600C8065E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8485AE0E16C8E1E600C8065E /* Default@2x.png */; };
+		8485AE1116C8E1E600C8065E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8485AE1016C8E1E600C8065E /* Default-568h@2x.png */; };
+		8485AE1416C8E1E600C8065E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485AE1316C8E1E600C8065E /* ViewController.m */; };
+		8485AE1716C8E1E600C8065E /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8485AE1516C8E1E600C8065E /* ViewController_iPhone.xib */; };
+		8485AE1A16C8E1E600C8065E /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8485AE1816C8E1E600C8065E /* ViewController_iPad.xib */; };
+		8485AE2716C8E20D00C8065E /* RKRichTextView.html in Resources */ = {isa = PBXBuildFile; fileRef = 8485AE2216C8E20D00C8065E /* RKRichTextView.html */; };
+		8485AE2816C8E20D00C8065E /* RKRichTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485AE2316C8E20D00C8065E /* RKRichTextView.m */; };
+		8485AE2916C8E20D00C8065E /* RKRichTextViewListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485AE2516C8E20D00C8065E /* RKRichTextViewListener.m */; };
+		8485AE2A16C8E20D00C8065E /* RKRichTextViewToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8485AE2616C8E20D00C8065E /* RKRichTextViewToolbar.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8485ADF716C8E1E600C8065E /* RichTextViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RichTextViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8485ADFA16C8E1E600C8065E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8485ADFC16C8E1E600C8065E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8485ADFE16C8E1E600C8065E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8485AE0216C8E1E600C8065E /* RichTextViewDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RichTextViewDemo-Info.plist"; sourceTree = "<group>"; };
+		8485AE0416C8E1E600C8065E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8485AE0616C8E1E600C8065E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8485AE0816C8E1E600C8065E /* RichTextViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RichTextViewDemo-Prefix.pch"; sourceTree = "<group>"; };
+		8485AE0916C8E1E600C8065E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8485AE0A16C8E1E600C8065E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8485AE0C16C8E1E600C8065E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		8485AE0E16C8E1E600C8065E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		8485AE1016C8E1E600C8065E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8485AE1216C8E1E600C8065E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8485AE1316C8E1E600C8065E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8485AE1616C8E1E600C8065E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		8485AE1916C8E1E600C8065E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		8485AE2116C8E20D00C8065E /* RKRichTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKRichTextView.h; sourceTree = "<group>"; };
+		8485AE2216C8E20D00C8065E /* RKRichTextView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RKRichTextView.html; sourceTree = "<group>"; };
+		8485AE2316C8E20D00C8065E /* RKRichTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKRichTextView.m; sourceTree = "<group>"; };
+		8485AE2416C8E20D00C8065E /* RKRichTextViewListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKRichTextViewListener.h; sourceTree = "<group>"; };
+		8485AE2516C8E20D00C8065E /* RKRichTextViewListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKRichTextViewListener.m; sourceTree = "<group>"; };
+		8485AE2616C8E20D00C8065E /* RKRichTextViewToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKRichTextViewToolbar.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8485ADF416C8E1E600C8065E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8485ADFB16C8E1E600C8065E /* UIKit.framework in Frameworks */,
+				8485ADFD16C8E1E600C8065E /* Foundation.framework in Frameworks */,
+				8485ADFF16C8E1E600C8065E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8485ADEE16C8E1E600C8065E = {
+			isa = PBXGroup;
+			children = (
+				8485AE2016C8E20D00C8065E /* RKRichTextView */,
+				8485AE0016C8E1E600C8065E /* RichTextViewDemo */,
+				8485ADF916C8E1E600C8065E /* Frameworks */,
+				8485ADF816C8E1E600C8065E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8485ADF816C8E1E600C8065E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8485ADF716C8E1E600C8065E /* RichTextViewDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8485ADF916C8E1E600C8065E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8485ADFA16C8E1E600C8065E /* UIKit.framework */,
+				8485ADFC16C8E1E600C8065E /* Foundation.framework */,
+				8485ADFE16C8E1E600C8065E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8485AE0016C8E1E600C8065E /* RichTextViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8485AE0916C8E1E600C8065E /* AppDelegate.h */,
+				8485AE0A16C8E1E600C8065E /* AppDelegate.m */,
+				8485AE1216C8E1E600C8065E /* ViewController.h */,
+				8485AE1316C8E1E600C8065E /* ViewController.m */,
+				8485AE1516C8E1E600C8065E /* ViewController_iPhone.xib */,
+				8485AE1816C8E1E600C8065E /* ViewController_iPad.xib */,
+				8485AE0116C8E1E600C8065E /* Supporting Files */,
+			);
+			path = RichTextViewDemo;
+			sourceTree = "<group>";
+		};
+		8485AE0116C8E1E600C8065E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8485AE0216C8E1E600C8065E /* RichTextViewDemo-Info.plist */,
+				8485AE0316C8E1E600C8065E /* InfoPlist.strings */,
+				8485AE0616C8E1E600C8065E /* main.m */,
+				8485AE0816C8E1E600C8065E /* RichTextViewDemo-Prefix.pch */,
+				8485AE0C16C8E1E600C8065E /* Default.png */,
+				8485AE0E16C8E1E600C8065E /* Default@2x.png */,
+				8485AE1016C8E1E600C8065E /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8485AE2016C8E20D00C8065E /* RKRichTextView */ = {
+			isa = PBXGroup;
+			children = (
+				8485AE2116C8E20D00C8065E /* RKRichTextView.h */,
+				8485AE2316C8E20D00C8065E /* RKRichTextView.m */,
+				8485AE2416C8E20D00C8065E /* RKRichTextViewListener.h */,
+				8485AE2516C8E20D00C8065E /* RKRichTextViewListener.m */,
+				8485AE2216C8E20D00C8065E /* RKRichTextView.html */,
+				8485AE2616C8E20D00C8065E /* RKRichTextViewToolbar.xib */,
+			);
+			path = RKRichTextView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8485ADF616C8E1E600C8065E /* RichTextViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8485AE1D16C8E1E600C8065E /* Build configuration list for PBXNativeTarget "RichTextViewDemo" */;
+			buildPhases = (
+				8485ADF316C8E1E600C8065E /* Sources */,
+				8485ADF416C8E1E600C8065E /* Frameworks */,
+				8485ADF516C8E1E600C8065E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RichTextViewDemo;
+			productName = RichTextViewDemo;
+			productReference = 8485ADF716C8E1E600C8065E /* RichTextViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8485ADEF16C8E1E600C8065E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = ren6;
+			};
+			buildConfigurationList = 8485ADF216C8E1E600C8065E /* Build configuration list for PBXProject "RichTextViewDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8485ADEE16C8E1E600C8065E;
+			productRefGroup = 8485ADF816C8E1E600C8065E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8485ADF616C8E1E600C8065E /* RichTextViewDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8485ADF516C8E1E600C8065E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8485AE0516C8E1E600C8065E /* InfoPlist.strings in Resources */,
+				8485AE0D16C8E1E600C8065E /* Default.png in Resources */,
+				8485AE0F16C8E1E600C8065E /* Default@2x.png in Resources */,
+				8485AE1116C8E1E600C8065E /* Default-568h@2x.png in Resources */,
+				8485AE1716C8E1E600C8065E /* ViewController_iPhone.xib in Resources */,
+				8485AE1A16C8E1E600C8065E /* ViewController_iPad.xib in Resources */,
+				8485AE2716C8E20D00C8065E /* RKRichTextView.html in Resources */,
+				8485AE2A16C8E20D00C8065E /* RKRichTextViewToolbar.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8485ADF316C8E1E600C8065E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8485AE0716C8E1E600C8065E /* main.m in Sources */,
+				8485AE0B16C8E1E600C8065E /* AppDelegate.m in Sources */,
+				8485AE1416C8E1E600C8065E /* ViewController.m in Sources */,
+				8485AE2816C8E20D00C8065E /* RKRichTextView.m in Sources */,
+				8485AE2916C8E20D00C8065E /* RKRichTextViewListener.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8485AE0316C8E1E600C8065E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8485AE0416C8E1E600C8065E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8485AE1516C8E1E600C8065E /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8485AE1616C8E1E600C8065E /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		8485AE1816C8E1E600C8065E /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8485AE1916C8E1E600C8065E /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8485AE1B16C8E1E600C8065E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8485AE1C16C8E1E600C8065E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8485AE1E16C8E1E600C8065E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RichTextViewDemo/RichTextViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "RichTextViewDemo/RichTextViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8485AE1F16C8E1E600C8065E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RichTextViewDemo/RichTextViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "RichTextViewDemo/RichTextViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8485ADF216C8E1E600C8065E /* Build configuration list for PBXProject "RichTextViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8485AE1B16C8E1E600C8065E /* Debug */,
+				8485AE1C16C8E1E600C8065E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8485AE1D16C8E1E600C8065E /* Build configuration list for PBXNativeTarget "RichTextViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8485AE1E16C8E1E600C8065E /* Debug */,
+				8485AE1F16C8E1E600C8065E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8485ADEF16C8E1E600C8065E /* Project object */;
+}

@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=0" />
+            </head>
+    <script type="text/javascript">
+		var pageHeight; var touchmoved;
+        document.addEventListener('touchend', function(event) {
+                                  if (touchmoved==false)
+                                    location.href = "http://touchend.ru";
+                                  }, false);
+        document.addEventListener('touchstart', function(event) {
+                                  touchmoved = false;
+                                  location.href = "http://touchstart.ru";
+                                  }, false);
+        document.addEventListener('touchmove', function(event) {
+                                  touchmoved = true;
+                                  location.href = "http://touchmove.ru";
+                                  }, false);
+        
+        
+        function checkHeight(e) {
+            
+            pageHeight = document.getElementById('entryContents').offsetHeight;
+           location.href = 'http://'+pageHeight+'.ru';
+
+            return true;
+        }
+        function getHeight(){
+            return pageHeight;
+        }
+        function insertTextAtCursor(html) {
+            // working but unused
+            var sel, range, node;
+            if (window.getSelection) {
+                sel = window.getSelection();
+                if (sel.getRangeAt && sel.rangeCount) {
+                    range = window.getSelection().getRangeAt(0);
+                    node = range.createContextualFragment(html);
+                    range.insertNode(node);
+                }
+            } else if (document.selection && document.selection.createRange) {
+                document.selection.createRange().pasteHTML(html);
+            }
+        }
+        function focusout(){
+            location.href = "http://focusout.ru";
+        }
+        function focusin(){
+            location.href = "http://focusin.ru";
+        }
+        function mousemoved(){
+            location.href = "http://mouseovered.ru";
+        }
+        function placeCaretAtEnd(el) {
+            if (typeof window.getSelection != "undefined"
+                && typeof document.createRange != "undefined") {
+                var range = document.createRange();
+                range.selectNodeContents(el);
+                range.collapse(false);
+                var sel = window.getSelection();
+                sel.removeAllRanges();
+                sel.addRange(range);
+            } else if (typeof document.body.createTextRange != "undefined") {
+                var textRange = document.body.createTextRange();
+                textRange.moveToElementText(el);
+                textRange.collapse(false);
+                textRange.select();
+            }
+        }
+        </script>
+    <style type="text/css">
+        /*
+        p,ul,ol{
+            margin:0;
+            padding-left:20;
+        }
+         */
+        #wrap{
+            font-size: 12px;
+            line-height: 1.5;
+            font-family: "Helvetica Neue";
+            color: rgb(64, 61, 60);
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+        /*
+         for iPhone use different style
+         */
+        @media only screen
+        and (max-device-width : 568px){
+            #wrap{
+                font-size: 16px;
+                font-family: "Helvetica Neue";
+                line-height: 1.5;
+                color: rgb(64, 61, 60);
+                height: 100%;
+                width: 100%;
+                overflow-y: scroll;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+
+        #entryContents{
+            min-height: 73px;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+        </style>
+	<body onload="return checkHeight(event)">
+		<div id="wrap">
+            <div id="entryContents" spellcheck="false" onfocus="focusin()" onblur="focusout()" class="entryBody" onkeyup="return checkHeight(event)" onMouseOver="mouseovered()" contenteditable="true" name="content">{%content}</div>
+		</div>
+    </body>
+</html>
