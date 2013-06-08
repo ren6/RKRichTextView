@@ -1,7 +1,7 @@
 # About RKRichTextView
 RKRichTextView is one of the most advanced Editable Rich Text Views.
 It is tested to work with iPhone/iPad OS 5.0 and newer.
-
+![Screenshot](https://github.com/ren6/RKRichTextView/raw/master/screen.png)
 # How to use
 
 ``` objective-c
@@ -12,7 +12,7 @@ It is tested to work with iPhone/iPad OS 5.0 and newer.
 // in code
 	RKRichTextView *richTextView = [[[RKRichTextView alloc] initWithFrame:CGRectMake(20, 100, self.view.frame.size.width-40, 200)] autorelease];
 	[self.view addSubview:richTextView];
-	richTextView.richDelegate = self;
+	richTextView.aDelegate = self;
 ```
 
 # Documentation
