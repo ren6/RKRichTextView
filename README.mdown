@@ -1,6 +1,6 @@
 # About RKRichTextView
 RKRichTextView is one of the most advanced Editable Rich Text Views.
-It is tested to work with iPhone/iPad OS 5.0 and newer.
+Works well on iOS 6/7 for iPhone/iPad.
 ![Screenshot](https://github.com/ren6/RKRichTextView/raw/master/screen.png)
 # How to use
 
