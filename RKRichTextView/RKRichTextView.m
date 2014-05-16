@@ -1,14 +1,32 @@
 //
 //  RKRichTextView.m
-//  ACL Workpapers
 //
 //  Created by ren6 on 2/1/13.
-//  Copyright (c) 2013 ACL Services Ltd. All rights reserved.
 //
 #import <QuartzCore/QuartzCore.h>
 #import "RKRichTextView.h"
+#import "objc/runtime.h"
 #define RK_IS_IPAD ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
 #define RK_IS_IPHONE ([UIDevice currentDevice].userInterfaceIdiom != UIUserInterfaceIdiomPad)
+
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
+
+NSString * const WRKRichTextViewWillBecomeFirstResponder = @"richTextViewWillBecomeFirstResponder";
+NSString * const WRKRichTextViewWillResignFirstResponder = @"richTextViewWillResignFirstResponder";
+
+@interface _SwizzleAccessoryViewRemover : NSObject
+
+@end
+
+@implementation _SwizzleAccessoryViewRemover
+
+-(id)inputAccessoryView
+{
+    return nil;
+}
+
+@end
 
 @interface RKRichTextView()<UIGestureRecognizerDelegate>
 -(void) willChangeHeight:(int)newHeight;
@@ -24,6 +42,11 @@
     CGAffineTransform rotate;
     BOOL isHiding; BOOL isShowing;
     float screenHeight;
+    int minHeight;
+    BOOL _isAlreadySwizzle;
+    
+    UIColor *_selectedColor;
+    UIColor *_deselectedColor;
 }
 @synthesize isActiveResponder;
 -(void) dealloc{
@@ -39,11 +62,13 @@
 }
 -(void) awakeFromNib{
     [super awakeFromNib];
+    [self swizzleMethod];
     [self setup];
 }
 -(id)init{
     self = [super init];
     if (self){
+        [self swizzleMethod];
         [self setup];
     }
     return self;
@@ -51,6 +76,7 @@
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self){
+        [self swizzleMethod];
         [self setup];
     }
     return self;
@@ -59,7 +85,40 @@
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     return nil; // if disable zooming then content offset will remain still
 }
+
+-(void)setupVersionsDifference
+{
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        [self.toolbar setBackgroundColor:[UIColor colorWithWhite:240.0f/255.0f alpha:1]];
+        [self.toolbar setBarStyle:UIBarStyleDefault];
+        [self.toolbar setTranslucent:NO];
+        
+        _selectedColor = [UIColor colorWithRed:0 green:0.478431 blue:1 alpha:1];
+        _deselectedColor = [UIColor colorWithRed:95.0f/255.0f green:97.0f/255.0f blue:106.0f/255.0f alpha:1.0f];
+        
+        
+        for (UIBarButtonItem *item in self.toolbar.items){
+            if (item.tag==10){
+                // for DONE
+                [item setTitleTextAttributes:@{NSForegroundColorAttributeName:_selectedColor} forState:UIControlStateNormal];
+            } else if (item.tag==100){
+                UISegmentedControl *segmentControl = ((UISegmentedControl*)[item customView]);
+                [segmentControl setTitleTextAttributes:@{NSForegroundColorAttributeName:_selectedColor} forState:UIControlStateNormal];
+                UIImage *image = [UIImage new];
+                [segmentControl setBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+                [segmentControl setBackgroundImage:image forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+                [segmentControl setDividerImage:image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+                [segmentControl setDividerImage:image forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+                [segmentControl setDividerImage:image forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+            }
+        }
+        
+    } else {
+    }
+}
 -(void) setup{
+    self.scalesPageToFit = YES;
+    self.scrollView.bounces = NO;
     self.opaque = NO;
     self.backgroundColor = [UIColor whiteColor];
     self.scrollView.delegate = self;
@@ -78,17 +137,10 @@
     
     self.toolbarView.frame = aFrame;
     self.toolbarView.hidden = YES;
+    [[UIApplication sharedApplication].delegate.window addSubview:self.toolbarView];
     
-#warning I do this because toolbarView should be added to window after rootViewController was added. We need toolbarView to be above controller's view.
-    
-    double delayInSeconds = 0.0f;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [[UIApplication sharedApplication].delegate.window addSubview:self.toolbarView];
-    });
-    
-
     self.toolbar = (UIToolbar*)[self.toolbarView viewWithTag:10];
+    [self setupVersionsDifference];
     for (UIBarButtonItem *item in self.toolbar.items){
         if (item.tag==1){
             [item setAction:@selector(boldAction:)];
@@ -119,16 +171,29 @@
         }
     }
     [self checkSelections];
+    
+    if (minHeight==0){
+        
+        if (RK_IS_IPAD)
+            minHeight = 73;
+        else
+            minHeight = ((int)self.frame.size.height - 12);
+    }
     [self setText:@""];
 }
 
 - (UIView *)inputAccessoryView{
     return nil;
 }
+
 - (void) keyboardWillHide:(NSNotification *)notif {
     [self hideToolbar];
 }
+
 - (void) keyboardWillShow:(NSNotification *)notif {
+    
+    [[UIApplication sharedApplication].delegate.window bringSubviewToFront:self.toolbarView];
+    
     [self performSelector:@selector(removeBar) withObject:nil afterDelay:0.0f];
     if (RK_IS_IPHONE) {
         if (isActiveResponder)
@@ -156,7 +221,7 @@
     switch (newOrientation) {
             // hardcoded - I know it is not good, but there are some artifacts on iOS 5, when hiding/showing keyboard multilpe times on richtextview
         case UIInterfaceOrientationLandscapeLeft:
-            finalFrame= CGRectMake(372 +10, 0, 34, 1024);
+            finalFrame= CGRectMake(372+10, 0, 34, 1024);
             break;
         case UIInterfaceOrientationLandscapeRight:
             finalFrame= CGRectMake(396-44, 0, 34, 1024);
@@ -211,7 +276,7 @@
             CGRect aFrame = self.toolbarView.frame;
             aFrame.origin = CGPointMake(0, screenHeight-260 + 10);
             self.toolbarView.frame = aFrame;
-
+            
         }completion:^(BOOL finished) {
             isShowing = NO;
             self.toolbarView.hidden = NO;
@@ -264,10 +329,23 @@
     if (isActiveResponder)
         [self checkSelections];
 }
+
++(BOOL)isFirstResponder:(UIView *)v{
+    for (UIView *vs in v.subviews) {
+        if ([vs isFirstResponder] || [self isFirstResponder:vs]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+-(BOOL)isFirstResponder{
+    return [[self class] isFirstResponder:self];
+}
+
 -(void) firstResponder:(BOOL) f{
     isActiveResponder = f;
     if (isActiveResponder){
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"richTextViewWillBecomeFirstResponder" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:WRKRichTextViewWillBecomeFirstResponder object:self];
     }
 }
 -(BOOL) becomeFirstResponder{
@@ -279,14 +357,16 @@
     return [super becomeFirstResponder];
 }
 -(BOOL)resignFirstResponder{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"richTextViewWillResignFirstResponder" object:nil];
-    UITextField *t = [[UITextField alloc] initWithFrame:self.toolbarView.frame];
-    [self.toolbarView.superview addSubview:t];
-    [t becomeFirstResponder];
-    [t resignFirstResponder];
-    [t removeFromSuperview];
-    [t release];
-
+    [[NSNotificationCenter defaultCenter] postNotificationName:WRKRichTextViewWillResignFirstResponder object:nil];
+    
+    if (self.isTheOnlyRichTextView==NO){
+        UITextField *t = [[UITextField alloc] initWithFrame:self.toolbarView.frame];
+        [self.toolbarView.superview addSubview:t];
+        [t becomeFirstResponder];
+        [t resignFirstResponder];
+        [t removeFromSuperview];
+        [t release];
+    }
     [self stringByEvaluatingJavaScriptFromString:@"document.activeElement.blur()"];
     [self hideToolbar];
     [self firstResponder:NO];
@@ -294,13 +374,13 @@
     return [super resignFirstResponder];
 }
 -(void) setInputAccessoryView:(UIView *)inputAccessoryView{
-   
+    
 }
 
 
 -(void)didChangeSegmentControl:(UISegmentedControl*)sender{
     if ([((NSObject*)[self aDelegate]) respondsToSelector:@selector(prevNextControlTouched:)]){
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"richTextViewWillBecomeFirstResponder" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:WRKRichTextViewWillBecomeFirstResponder object:self];
         [[self aDelegate] prevNextControlTouched:sender];
     }
 }
@@ -319,8 +399,17 @@
 -(int)contentSizeHeight{
     return [[self stringByEvaluatingJavaScriptFromString:@"getHeight()"] intValue];
 }
+-(void) setMinimumHeight:(int)newHeight{
+    minHeight = newHeight;
+    [self stopLoading];
+    [self setText:@""];
+}
 -(NSString*) text{
     NSString* t = [self stringByEvaluatingJavaScriptFromString:@"document.getElementById('entryContents').innerHTML"];
+    
+    
+    t = [t stringByReplacingOccurrencesOfString:@"<div>" withString:@"<br>"];
+    t = [t stringByReplacingOccurrencesOfString:@"</div>" withString:@""];
     
     NSArray *stringsToRemove = [NSArray arrayWithObjects:
                                 @"&nbsp;",
@@ -335,13 +424,22 @@
     if ([t2 length] == 0 ){
         return @"";
     }
+    
+    
     return t;
 }
 -(void)setText:(NSString *)richText{
+    if (richText==nil) richText = @"";
+    
     NSBundle *bundle = [NSBundle mainBundle];
     NSURL *indexFileURL = [bundle URLForResource:@"RKRichTextView" withExtension:@"html"];
 	NSString *text = [NSString stringWithContentsOfURL:indexFileURL encoding:NSUTF8StringEncoding error:nil];
+    
+    text = [text stringByReplacingOccurrencesOfString:@"73px;" withString:[NSString stringWithFormat:@"%dpx;",minHeight]];
+    
 	text = [text stringByReplacingOccurrencesOfString:@"{%content}" withString:richText];
+    
+    
 	[self loadHTMLString:text baseURL:nil];
     self.scalesPageToFit = YES;
     self.scrollView.scrollEnabled = NO;
@@ -351,26 +449,26 @@
 }
 - (IBAction)boldAction:(id)sender {
     [self stringByEvaluatingJavaScriptFromString:@"document.execCommand(\"Bold\")"];
-        [self checkSelections];
+    [self checkSelections];
 }
 
 - (IBAction)italicAction:(id)sender {
     [self stringByEvaluatingJavaScriptFromString:@"document.execCommand(\"Italic\")"];
-        [self checkSelections];
+    [self checkSelections];
 }
 
 - (IBAction)underlineAction:(id)sender {
     [self stringByEvaluatingJavaScriptFromString:@"document.execCommand(\"underline\")"];
-        [self checkSelections];
+    [self checkSelections];
 }
 - (IBAction)strikeAction:(id)sender {
     [self stringByEvaluatingJavaScriptFromString:@"document.execCommand(\"strikeThrough\")"];
-        [self checkSelections];
+    [self checkSelections];
 }
 
 - (IBAction)orderedAction:(id)sender {
     [self stringByEvaluatingJavaScriptFromString:@"document.execCommand(\"insertOrderedList\")"];
-        [self checkSelections];
+    [self checkSelections];
     if ([((NSObject*)[self aDelegate]) respondsToSelector:@selector(richTextViewDidChange:)])
         [[self aDelegate] richTextViewDidChange:self];
 }
@@ -391,20 +489,37 @@
     
     UIColor *blue = [UIColor colorWithRed:0.2 green:0.5 blue:0.75 alpha:1.0];
     UIColor *clear = [UIColor colorWithRed:95.0f/255.0f green:97.0f/255.0f blue:106.0f/255.0f alpha:1.0f];
-    for (UIBarButtonItem *item in self.toolbar.items){
-        if (item.tag==1)
-            [item setTintColor:boldEnabled?blue:clear];
-        else if (item.tag==2)
-            [item setTintColor:italicEnabled?blue:clear];
-        else if (item.tag==3)
-            [item setTintColor:underlineEnabled?blue:clear];
-        else if (item.tag==4)
-            [item setTintColor:strikeEnabled?blue:clear];
-        else if (item.tag==5)
-            [item setTintColor:isOrdered?blue:clear];
-        else if (item.tag==6)
-            [item setTintColor:isUnordered?blue:clear];
-        
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        for (UIBarButtonItem *item in self.toolbar.items){
+            if (item.tag==1)
+                [item setTitleTextAttributes:@{NSForegroundColorAttributeName: (boldEnabled?_selectedColor:_deselectedColor)} forState:UIControlStateNormal];
+            else if (item.tag==2)
+                [item setTitleTextAttributes:@{NSForegroundColorAttributeName: (italicEnabled?_selectedColor:_deselectedColor)} forState:UIControlStateNormal];
+            else if (item.tag==3)
+                [item setTitleTextAttributes:@{NSForegroundColorAttributeName: (underlineEnabled?_selectedColor:_deselectedColor)} forState:UIControlStateNormal];
+            else if (item.tag==4)
+                [item setTitleTextAttributes:@{NSForegroundColorAttributeName: (strikeEnabled?_selectedColor:_deselectedColor)} forState:UIControlStateNormal];
+            else if (item.tag==5)
+                [item setTitleTextAttributes:@{NSForegroundColorAttributeName: (isOrdered?_selectedColor:_deselectedColor)} forState:UIControlStateNormal];
+            else if (item.tag==6)
+                [item setTitleTextAttributes:@{NSForegroundColorAttributeName: (isUnordered?_selectedColor:_deselectedColor)} forState:UIControlStateNormal];
+        }
+    } else {
+        for (UIBarButtonItem *item in self.toolbar.items){
+            if (item.tag==1)
+                [item setTintColor:boldEnabled?blue:clear];
+            else if (item.tag==2)
+                [item setTintColor:italicEnabled?blue:clear];
+            else if (item.tag==3)
+                [item setTintColor:underlineEnabled?blue:clear];
+            else if (item.tag==4)
+                [item setTintColor:strikeEnabled?blue:clear];
+            else if (item.tag==5)
+                [item setTintColor:isOrdered?blue:clear];
+            else if (item.tag==6)
+                [item setTintColor:isUnordered?blue:clear];
+        }
     }
 }
 
@@ -417,6 +532,7 @@
     return nil;
 }
 - (void)removeBar {
+    
     // Locate non-UIWindow.
     UIWindow *keyboardWindow = nil;
     for (UIWindow *testWindow in [[UIApplication sharedApplication] windows]) {
@@ -425,6 +541,7 @@
             break;
         }
     }
+    
     // Locate UIWebFormView.
     for (UIView *formView in [keyboardWindow subviews]) {
         // iOS 5 sticks the UIWebFormView inside a UIPeripheralHostView.
@@ -443,6 +560,47 @@
             }
         }
     }
+}
+
+#pragma mark - Method swizzle for fix iOS 7
+
+- (void)swizzleMethod
+{
+    if (!_isAlreadySwizzle) {
+        _isAlreadySwizzle = YES;
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+            [self __removeInputAccessoryView];
+            return;
+        }
+    }
+}
+
+-(void)__removeInputAccessoryView
+{
+    UIView* subview;
+    
+    for (UIView* view in self.scrollView.subviews) {
+        if([[view.class description] hasPrefix:@"UIWeb"])
+            subview = view;
+    }
+    
+    if(subview == nil) return;
+    
+    NSString* name = [NSString stringWithFormat:@"%@_SwizzleAccessoryViewRemover", subview.class.superclass];
+    Class newClass = NSClassFromString(name);
+    
+    if(newClass == nil)
+    {
+        newClass = objc_allocateClassPair(subview.class, [name cStringUsingEncoding:NSASCIIStringEncoding], 0);
+        if(!newClass) return;
+        
+        Method method = class_getInstanceMethod([_SwizzleAccessoryViewRemover class], @selector(inputAccessoryView));
+        class_addMethod(newClass, @selector(inputAccessoryView), method_getImplementation(method), method_getTypeEncoding(method));
+        
+        objc_registerClassPair(newClass);
+    }
+    
+    object_setClass(subview, newClass);
 }
 
 @end

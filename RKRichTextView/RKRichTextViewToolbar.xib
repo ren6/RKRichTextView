@@ -1,490 +1,87 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
-	<data>
-		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12A269</string>
-		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187</string>
-		<string key="IBDocument.HIToolboxVersion">624.00</string>
-		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
-			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">2083</string>
-		</object>
-		<array key="IBDocument.IntegratedClassDependencies">
-			<string>IBProxyObject</string>
-			<string>IBUIBarButtonItem</string>
-			<string>IBUISegmentedControl</string>
-			<string>IBUIToolbar</string>
-			<string>IBUIView</string>
-		</array>
-		<array key="IBDocument.PluginDependencies">
-			<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-		</array>
-		<object class="NSMutableDictionary" key="IBDocument.Metadata">
-			<string key="NS.key.0">PluginDependencyRecalculationVersion</string>
-			<integer value="1" key="NS.object.0"/>
-		</object>
-		<array class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
-			<object class="IBProxyObject" id="372490531">
-				<string key="IBProxiedObjectIdentifier">IBFilesOwner</string>
-				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-			</object>
-			<object class="IBProxyObject" id="975951072">
-				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
-				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-			</object>
-			<object class="IBUIView" id="281244594">
-				<reference key="NSNextResponder"/>
-				<int key="NSvFlags">294</int>
-				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUIToolbar" id="460561199">
-						<reference key="NSNextResponder" ref="281244594"/>
-						<int key="NSvFlags">266</int>
-						<array class="NSMutableArray" key="NSSubviews">
-							<object class="IBUISegmentedControl" id="680857208">
-								<reference key="NSNextResponder" ref="460561199"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{7, 8}, {139, 30}}</string>
-								<reference key="NSSuperview" ref="460561199"/>
-								<reference key="NSWindow"/>
-								<string key="NSReuseIdentifierKey">_NS:262</string>
-								<bool key="IBUIOpaque">NO</bool>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<int key="IBSegmentControlStyle">2</int>
-								<int key="IBNumberOfSegments">2</int>
-								<array key="IBSegmentTitles">
-									<string>Prev</string>
-									<string>Next</string>
-								</array>
-								<array class="NSMutableArray" key="IBSegmentWidths">
-									<real value="0.0"/>
-									<real value="0.0"/>
-								</array>
-								<array class="NSMutableArray" key="IBSegmentEnabledStates">
-									<boolean value="YES"/>
-									<boolean value="YES"/>
-								</array>
-								<array class="NSMutableArray" key="IBSegmentContentOffsets">
-									<string>{0, 0}</string>
-									<string>{0, 0}</string>
-								</array>
-								<array class="NSMutableArray" key="IBSegmentImages">
-									<object class="NSNull" id="4"/>
-									<reference ref="4"/>
-								</array>
-								<bool key="IBMomentary">YES</bool>
-								<object class="NSColor" key="IBTintColor">
-									<int key="NSColorSpace">2</int>
-									<bytes key="NSRGB">MC4zNzI1NDkwMjcyIDAuMzgwMzkyMTkzOCAwLjQxNTY4NjMwOTMAA</bytes>
-								</object>
-							</object>
-						</array>
-						<string key="NSFrame">{{0, -5}, {768, 44}}</string>
-						<reference key="NSSuperview" ref="281244594"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="680857208"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-						<int key="IBUITag">10</int>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<int key="IBUIBarStyle">2</int>
-						<array class="NSMutableArray" key="IBUIItems">
-							<object class="IBUIBarButtonItem" id="72512745">
-								<int key="IBUITag">100</int>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<reference key="IBUICustomView" ref="680857208"/>
-								<reference key="IBUIToolbar" ref="460561199"/>
-							</object>
-							<object class="IBUIBarButtonItem" id="450460829">
-								<int key="IBUITag">1</int>
-								<string key="IBUITitle">B</string>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<float key="IBUIWidth">40</float>
-								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="460561199"/>
-								<object class="NSColor" key="IBUITintColor">
-									<int key="NSColorSpace">2</int>
-									<bytes key="NSRGB">MC4zNzI1NDkwMjcyIDAuMzgwMzkyMTkzOCAwLjQxNTY4NjMwOTMAA</bytes>
-								</object>
-							</object>
-							<object class="IBUIBarButtonItem" id="167922362">
-								<int key="IBUITag">2</int>
-								<string key="IBUITitle">I</string>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<float key="IBUIWidth">40</float>
-								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="460561199"/>
-								<object class="NSColor" key="IBUITintColor" id="543960319">
-									<int key="NSColorSpace">2</int>
-									<bytes key="NSRGB">MC4zNzI1NDkwMjcyIDAuMzgwMzkyMTkzOCAwLjQxNTY4NjMwOTMAA</bytes>
-								</object>
-							</object>
-							<object class="IBUIBarButtonItem" id="1050989302">
-								<int key="IBUITag">3</int>
-								<string key="IBUITitle">U</string>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<float key="IBUIWidth">40</float>
-								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="460561199"/>
-								<reference key="IBUITintColor" ref="543960319"/>
-							</object>
-							<object class="IBUIBarButtonItem" id="907732392">
-								<int key="IBUITag">4</int>
-								<string key="IBUITitle">S</string>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<float key="IBUIWidth">40</float>
-								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="460561199"/>
-								<reference key="IBUITintColor" ref="543960319"/>
-							</object>
-							<object class="IBUIBarButtonItem" id="178161597">
-								<int key="IBUITag">5</int>
-								<string key="IBUITitle">List</string>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<float key="IBUIWidth">40</float>
-								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="460561199"/>
-								<reference key="IBUITintColor" ref="543960319"/>
-							</object>
-							<object class="IBUIBarButtonItem" id="146456787">
-								<int key="IBUITag">6</int>
-								<string key="IBUITitle">Bullet</string>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<float key="IBUIWidth">40</float>
-								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="460561199"/>
-								<reference key="IBUITintColor" ref="543960319"/>
-							</object>
-							<object class="IBUIBarButtonItem" id="279956647">
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<reference key="IBUIToolbar" ref="460561199"/>
-								<int key="IBUISystemItemIdentifier">5</int>
-							</object>
-							<object class="IBUIBarButtonItem" id="891655837">
-								<int key="IBUITag">10</int>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<int key="IBUIStyle">2</int>
-								<reference key="IBUIToolbar" ref="460561199"/>
-								<int key="IBUISystemItemIdentifier">0</int>
-							</object>
-						</array>
-					</object>
-				</array>
-				<string key="NSFrameSize">{768, 34}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="460561199"/>
-				<string key="NSReuseIdentifierKey">_NS:9</string>
-				<object class="NSColor" key="IBUIBackgroundColor">
-					<int key="NSColorSpace">3</int>
-					<bytes key="NSWhite">MQA</bytes>
-					<object class="NSColorSpace" key="NSCustomColorSpace" id="468619522">
-						<int key="NSID">2</int>
-					</object>
-				</object>
-				<bool key="IBUIClipsSubviews">YES</bool>
-				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-			</object>
-			<object class="IBUIView" id="788145586">
-				<reference key="NSNextResponder"/>
-				<int key="NSvFlags">294</int>
-				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUIToolbar" id="906555900">
-						<reference key="NSNextResponder" ref="788145586"/>
-						<int key="NSvFlags">266</int>
-						<array class="NSMutableArray" key="NSSubviews"/>
-						<string key="NSFrame">{{0, -5}, {320, 44}}</string>
-						<reference key="NSSuperview" ref="788145586"/>
-						<reference key="NSWindow"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-						<int key="IBUITag">10</int>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<int key="IBUIBarStyle">2</int>
-						<array class="NSMutableArray" key="IBUIItems">
-							<object class="IBUIBarButtonItem" id="150700752">
-								<int key="IBUITag">1</int>
-								<string key="IBUITitle">B</string>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<float key="IBUIWidth">33</float>
-								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="906555900"/>
-								<object class="NSColor" key="IBUITintColor">
-									<int key="NSColorSpace">2</int>
-									<bytes key="NSRGB">MC4zNzI1NDkwMjcyIDAuMzgwMzkyMTkzOCAwLjQxNTY4NjMwOTMAA</bytes>
-								</object>
-							</object>
-							<object class="IBUIBarButtonItem" id="318679789">
-								<int key="IBUITag">2</int>
-								<string key="IBUITitle">I</string>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<float key="IBUIWidth">33</float>
-								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="906555900"/>
-								<object class="NSColor" key="IBUITintColor" id="469283747">
-									<int key="NSColorSpace">2</int>
-									<bytes key="NSRGB">MC4zNzI1NDkwMjcyIDAuMzgwMzkyMTkzOCAwLjQxNTY4NjMwOTMAA</bytes>
-								</object>
-							</object>
-							<object class="IBUIBarButtonItem" id="407543778">
-								<int key="IBUITag">3</int>
-								<string key="IBUITitle">U</string>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<float key="IBUIWidth">33</float>
-								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="906555900"/>
-								<reference key="IBUITintColor" ref="469283747"/>
-							</object>
-							<object class="IBUIBarButtonItem" id="92743121">
-								<int key="IBUITag">4</int>
-								<string key="IBUITitle">S</string>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<float key="IBUIWidth">33</float>
-								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="906555900"/>
-								<reference key="IBUITintColor" ref="469283747"/>
-							</object>
-							<object class="IBUIBarButtonItem" id="653193354">
-								<int key="IBUITag">5</int>
-								<string key="IBUITitle">List</string>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<float key="IBUIWidth">35</float>
-								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="906555900"/>
-								<reference key="IBUITintColor" ref="469283747"/>
-							</object>
-							<object class="IBUIBarButtonItem" id="166045975">
-								<int key="IBUITag">6</int>
-								<string key="IBUITitle">Bullet</string>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<float key="IBUIWidth">38</float>
-								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="906555900"/>
-								<reference key="IBUITintColor" ref="469283747"/>
-							</object>
-							<object class="IBUIBarButtonItem" id="783723737">
-								<int key="IBUITag">10</int>
-								<string key="IBUITitle">Done</string>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<float key="IBUIWidth">38</float>
-								<int key="IBUIStyle">2</int>
-								<reference key="IBUIToolbar" ref="906555900"/>
-							</object>
-						</array>
-					</object>
-				</array>
-				<string key="NSFrameSize">{320, 34}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="906555900"/>
-				<string key="NSReuseIdentifierKey">_NS:9</string>
-				<object class="NSColor" key="IBUIBackgroundColor">
-					<int key="NSColorSpace">3</int>
-					<bytes key="NSWhite">MQA</bytes>
-					<reference key="NSCustomColorSpace" ref="468619522"/>
-				</object>
-				<bool key="IBUIClipsSubviews">YES</bool>
-				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-			</object>
-		</array>
-		<object class="IBObjectContainer" key="IBDocument.Objects">
-			<array class="NSMutableArray" key="connectionRecords"/>
-			<object class="IBMutableOrderedSet" key="objectRecords">
-				<array key="orderedObjects">
-					<object class="IBObjectRecord">
-						<int key="objectID">0</int>
-						<array key="object" id="0"/>
-						<reference key="children" ref="1000"/>
-						<nil key="parent"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">-1</int>
-						<reference key="object" ref="372490531"/>
-						<reference key="parent" ref="0"/>
-						<string key="objectName">File's Owner</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">-2</int>
-						<reference key="object" ref="975951072"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">29</int>
-						<reference key="object" ref="281244594"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="460561199"/>
-						</array>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">3</int>
-						<reference key="object" ref="460561199"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="146456787"/>
-							<reference ref="178161597"/>
-							<reference ref="167922362"/>
-							<reference ref="1050989302"/>
-							<reference ref="907732392"/>
-							<reference ref="279956647"/>
-							<reference ref="891655837"/>
-							<reference ref="450460829"/>
-							<reference ref="72512745"/>
-						</array>
-						<reference key="parent" ref="281244594"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">16</int>
-						<reference key="object" ref="146456787"/>
-						<reference key="parent" ref="460561199"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">15</int>
-						<reference key="object" ref="178161597"/>
-						<reference key="parent" ref="460561199"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">10</int>
-						<reference key="object" ref="167922362"/>
-						<reference key="parent" ref="460561199"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">8</int>
-						<reference key="object" ref="1050989302"/>
-						<reference key="parent" ref="460561199"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">6</int>
-						<reference key="object" ref="907732392"/>
-						<reference key="parent" ref="460561199"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">5</int>
-						<reference key="object" ref="279956647"/>
-						<reference key="parent" ref="460561199"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">4</int>
-						<reference key="object" ref="891655837"/>
-						<reference key="parent" ref="460561199"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">34</int>
-						<reference key="object" ref="450460829"/>
-						<reference key="parent" ref="460561199"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">35</int>
-						<reference key="object" ref="72512745"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="680857208"/>
-						</array>
-						<reference key="parent" ref="460561199"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">36</int>
-						<reference key="object" ref="680857208"/>
-						<reference key="parent" ref="72512745"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">66</int>
-						<reference key="object" ref="788145586"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="906555900"/>
-						</array>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">67</int>
-						<reference key="object" ref="906555900"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="166045975"/>
-							<reference ref="653193354"/>
-							<reference ref="318679789"/>
-							<reference ref="407543778"/>
-							<reference ref="92743121"/>
-							<reference ref="150700752"/>
-							<reference ref="783723737"/>
-						</array>
-						<reference key="parent" ref="788145586"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">76</int>
-						<reference key="object" ref="166045975"/>
-						<reference key="parent" ref="906555900"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">75</int>
-						<reference key="object" ref="653193354"/>
-						<reference key="parent" ref="906555900"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">74</int>
-						<reference key="object" ref="318679789"/>
-						<reference key="parent" ref="906555900"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">73</int>
-						<reference key="object" ref="407543778"/>
-						<reference key="parent" ref="906555900"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">72</int>
-						<reference key="object" ref="92743121"/>
-						<reference key="parent" ref="906555900"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">69</int>
-						<reference key="object" ref="150700752"/>
-						<reference key="parent" ref="906555900"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">78</int>
-						<reference key="object" ref="783723737"/>
-						<reference key="parent" ref="906555900"/>
-					</object>
-				</array>
-			</object>
-			<dictionary class="NSMutableDictionary" key="flattenedProperties">
-				<string key="-1.CustomClassName">RichTextEditorView</string>
-				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="-2.CustomClassName">UIResponder</string>
-				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="15.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="16.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="34.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="35.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<integer value="0" key="36.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
-				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="66.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="67.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="69.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="75.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="76.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="78.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			</dictionary>
-			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
-			<nil key="activeLocalization"/>
-			<dictionary class="NSMutableDictionary" key="localizations"/>
-			<nil key="sourceID"/>
-			<int key="maxID">78</int>
-		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
-		<int key="IBDocument.localizationMode">0</int>
-		<string key="IBDocument.TargetRuntimeIdentifier">IBIPadFramework</string>
-		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<string key="IBCocoaTouchPluginVersion">2083</string>
-	</data>
-</archive>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
+<dependencies>
+<deployment defaultVersion="1536" identifier="iOS"/>
+<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+</dependencies>
+<objects>
+<placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RichTextEditorView"/>
+<placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+<view clipsSubviews="YES" contentMode="scaleToFill" id="29">
+<rect key="frame" x="0.0" y="0.0" width="768" height="34"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+<subviews>
+<toolbar opaque="NO" clearsContextBeforeDrawing="NO" tag="10" contentMode="scaleToFill" translucent="NO" id="3">
+<rect key="frame" x="0.0" y="-5" width="768" height="44"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+<items>
+<barButtonItem tag="100" style="plain" id="35">
+<segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" momentary="YES" id="36">
+<rect key="frame" x="16" y="7" width="139" height="30"/>
+<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+<segments>
+<segment title="Prev"/>
+<segment title="Next"/>
+</segments>
+<color key="tintColor" red="0.37254902719999999" green="0.3803921938" blue="0.4156863093" alpha="1" colorSpace="deviceRGB"/>
+</segmentedControl>
+</barButtonItem>
+<barButtonItem tag="1" title="B" width="40" id="34">
+<color key="tintColor" red="0.37254902719999999" green="0.3803921938" blue="0.4156863093" alpha="1" colorSpace="deviceRGB"/>
+</barButtonItem>
+<barButtonItem tag="2" title="I" width="40" id="10">
+<color key="tintColor" red="0.37254902719999999" green="0.3803921938" blue="0.4156863093" alpha="1" colorSpace="deviceRGB"/>
+</barButtonItem>
+<barButtonItem tag="3" title="U" width="40" id="8">
+<color key="tintColor" red="0.37254902719999999" green="0.3803921938" blue="0.4156863093" alpha="1" colorSpace="deviceRGB"/>
+</barButtonItem>
+<barButtonItem tag="4" title="S" width="40" id="6">
+<color key="tintColor" red="0.37254902719999999" green="0.3803921938" blue="0.4156863093" alpha="1" colorSpace="deviceRGB"/>
+</barButtonItem>
+<barButtonItem tag="5" title="List" width="40" id="15">
+<color key="tintColor" red="0.37254902719999999" green="0.3803921938" blue="0.4156863093" alpha="1" colorSpace="deviceRGB"/>
+</barButtonItem>
+<barButtonItem tag="6" title="Bullet" width="60" id="16">
+<color key="tintColor" red="0.37254902719999999" green="0.3803921938" blue="0.4156863093" alpha="1" colorSpace="deviceRGB"/>
+</barButtonItem>
+<barButtonItem style="plain" systemItem="flexibleSpace" id="5"/>
+<barButtonItem tag="10" style="done" systemItem="done" id="4"/>
+</items>
+</toolbar>
+</subviews>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+</view>
+<view clipsSubviews="YES" contentMode="scaleToFill" id="66">
+<rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+<subviews>
+<toolbar opaque="NO" clearsContextBeforeDrawing="NO" tag="10" contentMode="scaleToFill" translucent="NO" id="67">
+<rect key="frame" x="0.0" y="-5" width="320" height="44"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+<items>
+<barButtonItem tag="1" title="B" width="26" id="69">
+<color key="tintColor" red="0.37254902719999999" green="0.3803921938" blue="0.4156863093" alpha="1" colorSpace="deviceRGB"/>
+</barButtonItem>
+<barButtonItem tag="2" title="I" width="26" id="74">
+<color key="tintColor" red="0.37254902719999999" green="0.3803921938" blue="0.4156863093" alpha="1" colorSpace="deviceRGB"/>
+</barButtonItem>
+<barButtonItem tag="3" title="U" width="26" id="73">
+<color key="tintColor" red="0.37254902719999999" green="0.3803921938" blue="0.4156863093" alpha="1" colorSpace="deviceRGB"/>
+</barButtonItem>
+<barButtonItem tag="4" title="S" width="26" id="72">
+<color key="tintColor" red="0.37254902719999999" green="0.3803921938" blue="0.4156863093" alpha="1" colorSpace="deviceRGB"/>
+</barButtonItem>
+<barButtonItem tag="5" title="List" width="40" id="75">
+<color key="tintColor" red="0.37254902719999999" green="0.3803921938" blue="0.4156863093" alpha="1" colorSpace="deviceRGB"/>
+</barButtonItem>
+<barButtonItem tag="6" title="Bullet" width="45" id="76">
+<color key="tintColor" red="0.37254902719999999" green="0.3803921938" blue="0.4156863093" alpha="1" colorSpace="deviceRGB"/>
+</barButtonItem>
+<barButtonItem tag="10" title="Done" width="45" style="done" id="78"/>
+</items>
+</toolbar>
+</subviews>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+</view>
+</objects>
+</document>

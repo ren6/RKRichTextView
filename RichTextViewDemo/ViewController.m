@@ -18,15 +18,10 @@
 {
     [super viewWillAppear:animated];
     RKRichTextView *richTextView = [[[RKRichTextView alloc] initWithFrame:CGRectMake(20, 40, self.view.frame.size.width-40, 200)] autorelease];
+    richTextView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:richTextView];
     richTextView.text = @"This is <strong><i>rich</i></strong> text!";
     richTextView.aDelegate = self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

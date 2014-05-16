@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8B1089E4-5160-4EAB-B02B-FBC1197D49FF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RichTextViewDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FAB3E7DD-4463-4B78-9561-EF43E1FC6E4C</key>
+		<string>ssh://github.com/ren6/RKRichTextView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RichTextViewDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FAB3E7DD-4463-4B78-9561-EF43E1FC6E4C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/ren6/RKRichTextView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FAB3E7DD-4463-4B78-9561-EF43E1FC6E4C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FAB3E7DD-4463-4B78-9561-EF43E1FC6E4C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RKRichTextView</string>
+		</dict>
+	</array>
+</dict>
+</plist>
